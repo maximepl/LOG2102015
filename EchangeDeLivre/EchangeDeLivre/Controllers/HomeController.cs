@@ -15,7 +15,7 @@ namespace EchangeDeLivre.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Échange de livre en ligne";
 
             return View();
         }
