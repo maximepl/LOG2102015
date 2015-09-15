@@ -22,7 +22,7 @@ namespace EchangeDeLivre.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Votre page de contact";
 
             return View();
         }
