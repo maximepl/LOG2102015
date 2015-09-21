@@ -69,6 +69,11 @@ namespace EchangeDeLivre.Controllers
             return View();
         }
 
+        public ActionResult GetPartialView()
+        {
+            return PartialView("~/Views/Account/ManagerRegisterPartial");
+        }
+
         //
         // POST: /Account/Register
         [HttpPost]
@@ -78,7 +83,7 @@ namespace EchangeDeLivre.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser() { UserName = model.UserName };
+                var user = new ApplicationUser() { UserName = model.Mail };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

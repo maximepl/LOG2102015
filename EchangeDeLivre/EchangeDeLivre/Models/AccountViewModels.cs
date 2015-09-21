@@ -45,9 +45,26 @@ namespace EchangeDeLivre.Models
 
     public class RegisterViewModel
     {
-        [Required]
+        [Display(Name = "Catégorie d’utilisateur")]
+        public string UserCategorie { get; set; }
+
         [Display(Name = "Nom d’utilisateur")]
         public string UserName { get; set; }
+
+        [Required]
+        [Display(Name = "Courriel")]
+        public string Mail { get; set; }
+
+        [Display(Name = "Numéro de téléphone")]
+        public string PhoneNumber { get; set; }
+
+        [Required]
+        [Display(Name = "Nom de la coopérative")]
+        public string CooperativeName { get; set; }
+
+        [Required]
+        [Display(Name = "Adresse de la coopérative")]
+        public string CooperativeNameAdress { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "La chaîne {0} doit comporter au moins {2} caractères.", MinimumLength = 6)]
@@ -59,5 +76,6 @@ namespace EchangeDeLivre.Models
         [Display(Name = "Confirmer le mot de passe ")]
         [Compare("Password", ErrorMessage = "Le mot de passe et le mot de passe de confirmation ne correspondent pas.")]
         public string ConfirmPassword { get; set; }
+
     }
 }

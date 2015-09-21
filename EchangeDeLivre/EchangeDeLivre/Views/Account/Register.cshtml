@@ -1,41 +1,152 @@
 ﻿@model EchangeDeLivre.Models.RegisterViewModel
 @{
-    ViewBag.Title = "S’inscrire";
+    ViewBag.Title = "Création d'un compte";
 }
 
-<h2>@ViewBag.Title.</h2>
+<h2>@ViewBag.Title</h2>
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form", name="inscription" }))
 {
     @Html.AntiForgeryToken()
-    <h4>Créer un nouveau compte.</h4>
+    <h4>Veuillez choisir votre type de compte</h4>
+    <div class="form-group">
+        @Html.LabelFor(m => m.UserCategorie, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+           @* @Html.TextBoxFor(m => m.UserCategorie, new { @class = "form-control" })*@
+
+        <fieldset>
+            <select id="UserCategorie" name="UserCategorie"  onchange="categoryChange()">
+	            <option selected="selected" value="0">Gestionnaire de coopérative</option>
+	            <option value="1">Étudiant</option>
+	        </select>
+	    </fieldset>
+
+        </div>
+    </div>
+
+        <div id="detailRegister">
+            <!-- countain the chosen partial view -->
+        </div>
+
     <hr />
-    @Html.ValidationSummary()
-    <div class="form-group">
-        @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+
+
+        <div id="administratorRegistration">
+            @Html.ValidationSummary()
+            <div class="form-group">
+                @Html.LabelFor(m => m.Mail, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Mail, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <hr />
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.CooperativeName, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.CooperativeName, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.CooperativeNameAdress, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.CooperativeNameAdress, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    @*<input type="submit" class="btn btn-default" value="S'enregistrer" onclick="clicked();" />*@
+                        <input type="button" class="btn btn-default" value="S'enregistrer" onclick="clicked();" />
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+
+        
+
+        <div id="studentRegistration"  style="display: none;">
+            @Html.ValidationSummary()
+            <div class="form-group">
+                @Html.LabelFor(m => m.Mail, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Mail, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.PhoneNumber, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" class="btn btn-default" value="S'enregistrer" />
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="S'enregistrer" />
-        </div>
-    </div>
+
+    
+    
 }
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+
+
+
+<script type="text/javascript">
+        function categoryChange() {
+            if (document.getElementById("UserCategorie").value == "0") {
+                $("#administratorRegistration").show();
+                $("#studentRegistration").hide();
+                $('.validation-summary-errors').hide();
+                //document.getElementById("detailRegister").innerHTML = "Gestionnaire de coopérative";
+                //$.ajax({
+                //    url: '/Controllers/Account/GetPartialView',
+                //    dataType: 'html',
+                //    success: function (data) {
+                //        $('#detailRegister').html(data);
+                //    }
+                //});
+            }
+            else {
+                $("#administratorRegistration").hide();
+                $("#studentRegistration").show();
+            }
+        }
+
+        function clicked() {
+            if (confirm('Est-ce que les informations sont valide?')) {
+                console.log("Oui");
+                document.forms["inscription"].submit();
+            } else {
+                console.log("Non");
+                return false;
+            }
+        }
+</script>
