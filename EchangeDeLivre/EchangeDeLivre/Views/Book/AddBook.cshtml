@@ -1,0 +1,62 @@
+﻿@model EchangeDeLivre.Models.BookModels
+@{
+    ViewBag.Title = "Ajouter un livre";
+}
+<h2>@ViewBag.Title</h2>
+
+
+@*@Html.ValidationSummary()*@
+
+<h4>Bienvenue dans l'ajout d'un livre. 
+Veuillez commencer par entré le code ISBN du livre à chercher.
+</h4>
+<hr />
+    <div class="form-group">
+        @*@Html.LabelFor(m => m.BookCode, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.BookCode, new { @class = "form-control" })
+        </div>*@
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Chercher le livre" />
+        </div>
+    </div>
+
+        <div id="studentRegistration">
+            <hr />
+            <h5>Voici le résultat de votre recherche</h5>
+        </div>
+
+<div>
+    <h4>Book</h4>
+	<hr />
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ISBN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EAN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UPC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Genre)
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID })  |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID }) 
+        </td>*@
+    </tr>
+}
+</div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
