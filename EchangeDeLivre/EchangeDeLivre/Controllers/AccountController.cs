@@ -83,19 +83,26 @@ namespace EchangeDeLivre.Controllers
         {
             if (ModelState.IsValid)
             {
+                
                 var user = new ApplicationUser() { UserName = model.Mail };
+
+                UserManager.UserValidator = new UserValidator<ApplicationUser>(UserManager)
+                {
+                    AllowOnlyAlphanumericUserNames = false
+                };
+
                 var result = await UserManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
                 {
-                    if (model.UserCategorie == "0")
-                    {
-                        var roleresult = UserManager.AddToRole(user.UserName, "Admin");
-                    }
-                    else
-                    {
-                        var roleresult = UserManager.AddToRole(user.UserName, "Student");
-                    }
+                    //if (model.UserCategorie == "0")
+                    //{
+                    //    var roleresult = UserManager.AddToRole(user.UserName, "Admin");
+                    //}
+                    //else
+                    //{
+                    //    var roleresult = UserManager.AddToRole(user.UserName, "Student");
+                    //}
 
                     await SignInAsync(user, isPersistent: false);
                     return RedirectToAction("Index", "Home");
