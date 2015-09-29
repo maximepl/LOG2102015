@@ -58,11 +58,11 @@ namespace EchangeDeLivre.Models
         [Display(Name = "Numéro de téléphone")]
         public string PhoneNumber { get; set; }
 
-        [Required]
+        //[Required]
         [Display(Name = "Nom de la coopérative")]
         public string CooperativeName { get; set; }
 
-        [Required]
+        //[Required]
         [Display(Name = "Adresse de la coopérative")]
         public string CooperativeNameAdress { get; set; }
 
