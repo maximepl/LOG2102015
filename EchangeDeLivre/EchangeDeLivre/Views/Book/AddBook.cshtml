@@ -1,0 +1,32 @@
+﻿@model EchangeDeLivre.Models.AddBookViewModel
+@{
+    ViewBag.Title = "Ajouter un livre";
+}
+<h2>@ViewBag.Title</h2>
+
+
+@*@Html.ValidationSummary()*@
+
+<h4>Bienvenue dans l'ajout d'un livre. 
+Veuillez commencer par entré le code ISBN du livre à chercher.
+</h4>
+<hr />
+    <div class="form-group">
+        @Html.LabelFor(m => m.BookCode, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.BookCode, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Chercher le livre" />
+        </div>
+    </div>
+
+<div id="studentRegistration">
+            <hr />
+            <h5>Voici le résultat de votre recherche</h5>
+        </div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

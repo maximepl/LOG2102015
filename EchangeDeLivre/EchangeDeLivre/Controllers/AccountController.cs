@@ -85,8 +85,18 @@ namespace EchangeDeLivre.Controllers
             {
                 var user = new ApplicationUser() { UserName = model.Mail };
                 var result = await UserManager.CreateAsync(user, model.Password);
+
                 if (result.Succeeded)
                 {
+                    if (model.UserCategorie == "0")
+                    {
+                        var roleresult = UserManager.AddToRole(user.UserName, "Admin");
+                    }
+                    else
+                    {
+                        var roleresult = UserManager.AddToRole(user.UserName, "Student");
+                    }
+
                     await SignInAsync(user, isPersistent: false);
                     return RedirectToAction("Index", "Home");
                 }
