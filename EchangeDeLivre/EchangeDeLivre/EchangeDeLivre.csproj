@@ -224,7 +224,6 @@
     <Content Include="Views\Account\ManagerRegisterPartial.cshtml" />
     <Content Include="Views\Book\AddBook.cshtml" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

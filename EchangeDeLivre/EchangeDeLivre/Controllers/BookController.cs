@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 using EchangeDeLivre.Models;
+using System.Net;
 
 namespace EchangeDeLivre.Controllers
 {
@@ -16,7 +17,23 @@ namespace EchangeDeLivre.Controllers
     {
         public ActionResult AddBook()
         {
-            return View();
+            return View(db.Books.ToList());
+        }
+
+        private BookDBContext db = new BookDBContext();
+
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Book book = db.Books.Find(id);
+            if (book == null)
+            {
+                return HttpNotFound();
+            }
+            return View(book);
         }
     }
 }
