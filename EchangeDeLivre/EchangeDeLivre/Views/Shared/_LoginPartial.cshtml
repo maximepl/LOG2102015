@@ -16,7 +16,8 @@
 else
 {
     <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("S’inscrire", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Se connecter", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        <li>@Html.ActionLink(EchangeDeLivre.Ressources.Resources.Register, "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink(EchangeDeLivre.Ressources.Resources.Login, "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        <li>@Html.ActionLink(EchangeDeLivre.Ressources.Resources.LanguageChoice, "ChangeLanguage", "Home", new { linkBack = Request.RawUrl, languageCode = EchangeDeLivre.Ressources.Resources.languageCode }, null)</li>
     </ul>
 }

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using EchangeDeLivre.Ressources;
+using System.ComponentModel.DataAnnotations;
 
 namespace EchangeDeLivre.Models
 {
@@ -45,35 +46,35 @@ namespace EchangeDeLivre.Models
 
     public class RegisterViewModel
     {
-        [Display(Name = "Catégorie d’utilisateur")]
+        [Display(Name = "UserCategory", ResourceType = typeof(Ressources.Resources))]
         public string UserCategorie { get; set; }
 
         [Display(Name = "Nom d’utilisateur")]
         public string UserName { get; set; }
 
         [Required]
-        [Display(Name = "Courriel")]
+        [Display(Name = "Mail", ResourceType = typeof(Ressources.Resources))]
         public string Mail { get; set; }
 
-        [Display(Name = "Numéro de téléphone")]
+        [Display(Name = "Telephone", ResourceType = typeof(Ressources.Resources))]
         public string PhoneNumber { get; set; }
 
         //[Required]
-        [Display(Name = "Nom de la coopérative")]
+        [Display(Name = "CoopName", ResourceType = typeof(Ressources.Resources))]
         public string CooperativeName { get; set; }
 
         //[Required]
-        [Display(Name = "Adresse de la coopérative")]
+        [Display(Name = "CoopAdress", ResourceType = typeof(Ressources.Resources))]
         public string CooperativeNameAdress { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "La chaîne {0} doit comporter au moins {2} caractères.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Mot de passe")]
+        [Display(Name = "Password", ResourceType = typeof(Ressources.Resources))]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirmer le mot de passe ")]
+        [Display(Name = "ConfirmPassword", ResourceType = typeof(Ressources.Resources))]
         [Compare("Password", ErrorMessage = "Le mot de passe et le mot de passe de confirmation ne correspondent pas.")]
         public string ConfirmPassword { get; set; }
 
