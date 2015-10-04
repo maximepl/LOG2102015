@@ -32,15 +32,15 @@ namespace EchangeDeLivre.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Nom d’utilisateur")]
+        [Display(Name = "Mail", ResourceType = typeof(Ressources.Resources))]
         public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Mot de passe")]
+        [Display(Name = "Password", ResourceType = typeof(Ressources.Resources))]
         public string Password { get; set; }
 
-        [Display(Name = "Mémoriser le mot de passe ?")]
+        [Display(Name = "RememberMe", ResourceType = typeof(Ressources.Resources))]
         public bool RememberMe { get; set; }
     }
 

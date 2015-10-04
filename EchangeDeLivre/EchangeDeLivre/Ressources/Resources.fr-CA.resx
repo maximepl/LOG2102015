@@ -127,7 +127,7 @@
     <value>Plan d'hébergement</value>
   </data>
   <data name="About" xml:space="preserve">
-    <value>À propos de</value>
+    <value>À propos</value>
   </data>
   <data name="AccountCategoryInfo" xml:space="preserve">
     <value>Veuillez choisir votre type de compte</value>
@@ -163,9 +163,7 @@
     <value>Pour commencer</value>
   </data>
   <data name="GettingStartedInfo" xml:space="preserve">
-    <value>ASP.NET MVC vous donne, de façon à base de modèles-puissant pour construire des sites Web dynamiques
-             permet une séparation nette des préoccupations et vous donne le plein contrôle sur le balisage
-             pour, développement agile agréable.</value>
+    <value>ASP.NET MVC vous donne, de façon à base de modèles-puissant pour construire des sites Web dynamiques permet une séparation nette des préoccupations et vous donne le plein contrôle sur le balisage pour, développement agile agréable.</value>
   </data>
   <data name="Home" xml:space="preserve">
     <value>Accueil</value>
@@ -202,5 +200,41 @@
   </data>
   <data name="WebHostingInfo" xml:space="preserve">
     <value>Vous pouvez facilement trouver une société d'hébergement Web qui offre la bonne combinaison de fonctionnalités et de prix pour vos applications.</value>
+  </data>
+  <data name="AboutMessage" xml:space="preserve">
+    <value>Échange de livre en ligne pour log 210</value>
+  </data>
+  <data name="AboutText" xml:space="preserve">
+    <value>Utilisez cette zone pour fournir des informations supplémentaires.</value>
+  </data>
+  <data name="ContactMessage" xml:space="preserve">
+    <value>Votre page de contact</value>
+  </data>
+  <data name="ContactTitle" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="DontHaveAccount" xml:space="preserve">
+    <value>si vous n'avez pas de compte local.</value>
+  </data>
+  <data name="ExternalAuth1" xml:space="preserve">
+    <value>Il n'y a pas de services d'authentification externes configurés. Voir</value>
+  </data>
+  <data name="ExternalAuth2" xml:space="preserve">
+    <value>cet article</value>
+  </data>
+  <data name="ExternalAuth3" xml:space="preserve">
+    <value>pour plus de détails sur la configuration de cette application ASP.NET pour soutenir la connection via des services externes.</value>
+  </data>
+  <data name="LocalAccount" xml:space="preserve">
+    <value>Utilisez un compte local pour vous connecter.</value>
+  </data>
+  <data name="LoginTitle" xml:space="preserve">
+    <value>Se connecter</value>
+  </data>
+  <data name="OtherLoginService" xml:space="preserve">
+    <value>Utiliser un autre service pour vous connecter.</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Mémoriser le mot de passe ?</value>
   </data>
 </root>

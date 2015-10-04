@@ -16,15 +16,11 @@ namespace EchangeDeLivre.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Échange de livre en ligne pour log 210";
-
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Votre page de contact";
-
             return View();
         }
 

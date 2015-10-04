@@ -203,4 +203,40 @@
   <data name="WebHostingInfo" xml:space="preserve">
     <value>You can easily find a web hosting company that offers the right mix of features and price for your applications.</value>
   </data>
+  <data name="AboutMessage" xml:space="preserve">
+    <value>Online Book Exchange for log 210</value>
+  </data>
+  <data name="AboutText" xml:space="preserve">
+    <value>Use this area to provide additional information.</value>
+  </data>
+  <data name="ContactMessage" xml:space="preserve">
+    <value>Your contact page</value>
+  </data>
+  <data name="ContactTitle" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="DontHaveAccount" xml:space="preserve">
+    <value>if you do not have a local account.</value>
+  </data>
+  <data name="ExternalAuth1" xml:space="preserve">
+    <value>There are no external authentication services configured. See </value>
+  </data>
+  <data name="ExternalAuth2" xml:space="preserve">
+    <value>this article</value>
+  </data>
+  <data name="ExternalAuth3" xml:space="preserve">
+    <value>for details on setting up this ASP.NET application to support logging in via external services.</value>
+  </data>
+  <data name="LocalAccount" xml:space="preserve">
+    <value>Use a local account to log on.</value>
+  </data>
+  <data name="LoginTitle" xml:space="preserve">
+    <value>Log on</value>
+  </data>
+  <data name="OtherLoginService" xml:space="preserve">
+    <value>Use another service to log in.</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Remember password?</value>
+  </data>
 </root>
