@@ -93,6 +93,8 @@ namespace EchangeDeLivre.Controllers
 
                 var result = await UserManager.CreateAsync(user, model.Password);
 
+                //La reggex que l'on doit vérifier pour le e-mail : .*[@].*[.].*
+
                 if (result.Succeeded)
                 {
                     //if (model.UserCategorie == "0")

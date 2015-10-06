@@ -22,6 +22,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+
+                    <li>@Html.ActionLink(EchangeDeLivre.Ressources.Resources.LanguageChoice, "ChangeLanguage", "Home", new { linkBack = Request.RawUrl, languageCode = EchangeDeLivre.Ressources.Resources.languageCode }, null)</li>
                     <li>@Html.ActionLink(EchangeDeLivre.Ressources.Resources.Home, "Index", "Home")</li>
                     <li>@Html.ActionLink(EchangeDeLivre.Ressources.Resources.About, "About", "Home")</li>
                     <li>@Html.ActionLink(EchangeDeLivre.Ressources.Resources.Contact, "Contact", "Home")</li>
